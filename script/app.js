@@ -54,8 +54,31 @@ if (!document.getElementById("t-phonemask-script")) {
   });
 }
 
-function submitForm() {
-  // Check if inputs are filled
+// function submitForm() {
+//   // Check if inputs are filled
+//   var nameInput = document.getElementById("input_8511215262381").value.trim();
+//   var phoneInput = document.getElementById("input_8511215262382").value.trim();
+//   var premiumRadio = document.querySelector(
+//     'input[name="Tarifingizni tanlang"][value="Premium"]'
+//   );
+//   var vipRadio = document.querySelector(
+//     'input[name="Tarifingizni tanlang"][value="VIP"]'
+//   );
+
+//   if (
+//     nameInput !== "" &&
+//     phoneInput !== "" &&
+//     (premiumRadio.checked || vipRadio.checked)
+//   ) {
+//     window.location.href = "payment.html";
+//   } else {
+//     alert("Iltimos, barcha maydonlarni to'ldiring!");
+//   }
+// }
+
+let button = document.querySelector(".t-submit");
+
+button.addEventListener("click", function (e) {
   var nameInput = document.getElementById("input_8511215262381").value.trim();
   var phoneInput = document.getElementById("input_8511215262382").value.trim();
   var premiumRadio = document.querySelector(
@@ -64,16 +87,13 @@ function submitForm() {
   var vipRadio = document.querySelector(
     'input[name="Tarifingizni tanlang"][value="VIP"]'
   );
-
   if (
     nameInput !== "" &&
     phoneInput !== "" &&
     (premiumRadio.checked || vipRadio.checked)
   ) {
-    // Redirect to payment.html
     window.location.href = "payment.html";
   } else {
-    // Display error message or handle validation
     alert("Iltimos, barcha maydonlarni to'ldiring!");
   }
-}
+});
